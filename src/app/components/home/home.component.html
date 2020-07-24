@@ -1,0 +1,24 @@
+
+<div class="container">
+ <div class="row ">
+       <div  class=" col-md-6 col-lg-4 col-xl-3" *ngFor = "let product of products;let i = index">
+       <div  class="card" style="width: 18rem;">
+        <img class="card-img-top" [src]="product.imageUrl" alt="Card image cap">
+        
+        <div class="card-body">
+          <h5 class="card-title">{{product.name|uppercase}}</h5>
+          <p class="card-text">{{product.price|currency}}</p>
+          <button  *ngIf ="!productSelectesid || !showOneproduct(i) " (click) = "addTocart(i)" href="#" class="btn btn-primary">Add yo cart</button>
+        <div *ngIf ="productSelectesid && showOneproduct(i)" class="amount">
+       <input  #amount placeholder="amount"  type="number" class="form-control input" #getAmount>
+       <button (click) = "buy(getAmount.value)" class="btn btn-primary">Buy</button>
+       <div *ngIf = "isUser" class="alert alert-danger">please signin or signup first</div>
+        </div>
+        
+        </div>
+      </div>
+      </div>     
+       </div> 
+    </div>
+
+

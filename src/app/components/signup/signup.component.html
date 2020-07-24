@@ -1,0 +1,22 @@
+<div class="container">
+<h2 class="register-title">Sign up</h2>
+<form  #f="ngForm"   (ngSubmit)="signUp(f)">
+<input ngModel name="name"  #name  ="ngModel" type="text" placeholder="Enter name" class=" input form-control" required>
+<div   *ngIf ="name.invalid && name.touched"  class="alert alert-danger">name is requred</div>
+
+<input ngModel name="email" #email  ="ngModel" type="email" placeholder="Enter email" class=" input form-control" email required>
+<div   *ngIf ="email.invalid && email.touched"  class="alert alert-danger">email is requred</div>
+
+<input ngModel name="password" #password = "ngModel"  type="password" placeholder="Enter password" class=" input form-control"minlength = "6">
+<div   *ngIf ="password.invalid && password.touched"  class="alert alert-danger">password must be more than 6 number or character</div>
+<!--
+<input ngModel name="confirm" #confirmPassword = "ngModel"  type="password" placeholder="Confirm password" class=" input form-control" required>
+<div *ngIf ="confirmPassword.vlaue !==password.vlaue"  class="alert alert-danger">  password not equal </div>
+-->
+<input ngModel name="phone"  #phone = "ngModel"  type="text" placeholder="Enter phone" class=" input form-control" minlength="12" maxlength="12" required>
+<div  *ngIf ="phone.invalid && phone.touched"  class="alert alert-danger">phone is requred</div>
+<button type="submit" [disabled] = "f.invalid" class="btn btn-primary">sign up</button>
+<div class="alert alert-danger" *ngIf = "message">{{message}}</div>
+</form>
+
+</div>

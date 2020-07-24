@@ -1,0 +1,17 @@
+
+
+
+<div class="container">
+<h2 class="register-title">Sign in</h2>
+<form  #f="ngForm"   (ngSubmit)="login(f)">
+    
+<input ngModel name="email" #email  ="ngModel" type="email" placeholder="Enter email" class=" input form-control" email required>
+<div *ngIf ="email.invalid && email.touched"  class="alert alert-danger">email is requred</div>
+
+<input ngModel name="password" #password = "ngModel"  type="password" placeholder="Enter password" class=" input form-control">
+<div   *ngIf ="password.invalid && password.touched"  class="alert alert-danger">password must be more than 6 number or character</div>
+
+<button type="submit" [disabled] = "f.invalid" class="btn btn-primary">sign in</button>
+</form>
+</div>
+<div *ngIf = "message" class="alert alert-danger">{{message}}</div>

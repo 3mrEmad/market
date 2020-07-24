@@ -1,0 +1,11 @@
+
+.navbar{
+    background-color: rgba(225, 39, 145  ,.2);
+    border-radius: 6px;
+    
+}
+.nav-link{
+    text-transform: uppercase;
+    font-size: 18px;
+    color:white;
+}

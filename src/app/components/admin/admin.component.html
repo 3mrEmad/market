@@ -1,0 +1,16 @@
+     <div class="container">
+    <h2 class="register-title">Add product</h2>
+    <form  #f="ngForm"   (ngSubmit)="addProduct(f)">
+    <input ngModel name="name"  #name  ="ngModel" type="text" placeholder="product name" class=" input form-control" required>
+    <div   *ngIf ="name.invalid && name.touched"  class="alert alert-danger">product name is required</div>
+
+    <input ngModel name="price"  #price  ="ngModel" type="text" placeholder="product price" class=" input form-control" required>
+    <div   *ngIf ="price.invalid &&price.touched"  class="alert alert-danger">price is requred</div>
+     <label class="imagelabel" >product image: </label>
+    <input ngModel name="image" #img  #image  ="ngModel" type="file" placeholder="product image" required>
+    <div   *ngIf ="price.invalid && price.touched"  class="alert alert-danger">image is requred</div>
+
+    <button type="submit" [disabled] = "f.invalid" class="btn btn-primary">send</button>
+</form>
+</div>
+  
